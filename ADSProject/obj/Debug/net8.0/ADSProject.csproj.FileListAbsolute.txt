@@ -30,3 +30,4 @@ C:\Users\rober\OneDrive\Escritorio\desarrollo de sofware ll\ADSProject\ADSProjec
 C:\Users\rober\OneDrive\Escritorio\desarrollo de sofware ll\ADSProject\ADSProject\obj\Debug\net8.0\ADSProject.pdb
 C:\Users\rober\OneDrive\Escritorio\desarrollo de sofware ll\ADSProject\ADSProject\obj\Debug\net8.0\ADSProject.genruntimeconfig.cache
 C:\Users\rober\OneDrive\Escritorio\desarrollo de sofware ll\ADSProject\ADSProject\obj\Debug\net8.0\ref\ADSProject.dll
+C:\Users\rober\OneDrive\Escritorio\desarrollo de sofware ll\ADSProject\ADSProject\obj\Debug\net8.0\ADSProject.sourcelink.json
