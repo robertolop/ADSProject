@@ -9,7 +9,7 @@ namespace ADSProject.Controllers
         public class CarrerasController : ControllerBase
         {
             private readonly ICarrera carrera;
-            private const string COD_EXITO = "000000";
+            private const string COD_EXITO = "000000";  
             private const string COD_ERROR = "999999";
             private string pCodRespuesta;
             private string pMensajeUsuario;
@@ -28,7 +28,14 @@ namespace ADSProject.Controllers
             {
                 try
                 {
-                    int contador = this.carrera.AgregarCarrera(carrera);
+                //verificar que todas las validaciones por atributo del modelo este correcto.
+                if (!ModelState.IsValid)
+                {
+                    // En caso de no cumplir con todas las validaciones se procede a retonar una respuesta erronea.
+                    return BadRequest(ModelState);
+                }
+
+                int contador = this.carrera.AgregarCarrera(carrera);
                     if (contador > 0)
                     {
                         pCodRespuesta = COD_EXITO;
@@ -54,7 +61,13 @@ namespace ADSProject.Controllers
             {
                 try
                 {
-                    int contador = this.carrera.ActualizarCarrera(id, carrera);
+                //verificar que todas las validaciones por atributo del modelo este correcto.
+                if (!ModelState.IsValid)
+                {
+                    // En caso de no cumplir con todas las validaciones se procede a retonar una respuesta erronea.
+                    return BadRequest(ModelState);
+                }
+                int contador = this.carrera.ActualizarCarrera(id, carrera);
                     if (contador > 0)
                     {
                         pCodRespuesta = COD_EXITO;

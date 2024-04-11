@@ -20,7 +20,7 @@ namespace ADSProject.Models
         [MaxLength(length: 254, ErrorMessage = "La logitud del campo no puede ser mayor a 254 caracteres.")]
         [EmailAddress(ErrorMessage ="El formato de correo electronico no es correcto.")]
         public string CorreoEstudiante { get; set; }
-       
+        
 
 
     }
