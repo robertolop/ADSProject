@@ -6,10 +6,13 @@ namespace ADSProject.Models
     {
         public int Id { get; set; }
         public string Codigo { get; set; }
+
         [Required(ErrorMessage = "Este es un campo requerido.")]
-        [MaxLength(length: 50, ErrorMessage = "La logitud del campo no puede ser mayor 3 caracteres.")]
+        [MaxLength(50, ErrorMessage = "La longitud del campo no puede ser mayor a 3 caracteres.")]
         public string Nombre { get; set; }
+
         [Required(ErrorMessage = "Este es un campo requerido.")]
-        [MaxLength(length: 50, ErrorMessage = "La logitud del campo no puede ser mayor a 40 caracteres.")]
+        [MaxLength(50, ErrorMessage = "La longitud del campo no puede ser mayor a 40 caracteres.")]
+        public string Descripcion { get; set; }
     }
 }

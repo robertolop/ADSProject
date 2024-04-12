@@ -24,7 +24,14 @@ namespace ADSProject.Controllers
         {
             try
             {
-      
+                //verificar que todas las validaciones por atributo del modelo este correcto.
+                if (!ModelState.IsValid)
+                {
+                    // En caso de no cumplir con todas las validaciones se procede a retonar una respuesta erronea.
+                    return BadRequest(ModelState);
+                }
+
+
                 int contador = this.profesor.AgregarProfesor(profesor);
                 if (contador > 0)
                 {
@@ -51,7 +58,14 @@ namespace ADSProject.Controllers
         {
             try
             {
-               
+                //verificar que todas las validaciones por atributo del modelo este correcto.
+                if (!ModelState.IsValid)
+                {
+                    // En caso de no cumplir con todas las validaciones se procede a retonar una respuesta erronea.
+                    return BadRequest(ModelState);
+                }
+
+
                 int contador = this.profesor.ActualizarProfesor(idProfesor, profesor);
                 if (contador > 0)
                 {
