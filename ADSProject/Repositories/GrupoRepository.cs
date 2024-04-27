@@ -9,7 +9,7 @@ namespace ADSProject.Repositories
         private List<Grupo> lstGrupo = new List<Grupo>
         {
             new Grupo{IdGrupo = 1, IdCarrera = 1, IdMateria = 1,
-            IdProfesor = 1, Ciclo = 1,
+            IdProfesor = 1, Ciclo = 01, 
             Anio = 2024}
         };
 

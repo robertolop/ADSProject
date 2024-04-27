@@ -64,8 +64,6 @@ namespace ADSProject.Controllers
                     // En caso de no cumplir con todas las validaciones se procede a retonar una respuesta erronea.
                     return BadRequest(ModelState);
                 }
-
-
                 int contador = this.profesor.ActualizarProfesor(idProfesor, profesor);
                 if (contador > 0)
                 {
