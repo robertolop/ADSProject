@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ADSProject.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240427032832_Estudiantes")]
-    partial class Estudiantes
+    [Migration("20240427055310_Grupos")]
+    partial class Grupos
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -23,6 +23,29 @@ namespace ADSProject.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+
+            modelBuilder.Entity("ADSProject.Models.Carrera", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Codigo")
+                        .IsRequired()
+                        .HasMaxLength(3)
+                        .HasColumnType("nvarchar(3)");
+
+                    b.Property<string>("Nombre")
+                        .IsRequired()
+                        .HasMaxLength(40)
+                        .HasColumnType("nvarchar(40)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Carreras");
+                });
 
             modelBuilder.Entity("ADSProject.Models.Estudiante", b =>
                 {
@@ -55,6 +78,36 @@ namespace ADSProject.Migrations
                     b.HasKey("IdEstudiante");
 
                     b.ToTable("Estudiantes");
+                });
+
+            modelBuilder.Entity("ADSProject.Models.Grupo", b =>
+                {
+                    b.Property<int>("IdGrupo")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdGrupo"));
+
+                    b.Property<int>("Anio")
+                        .HasMaxLength(4)
+                        .HasColumnType("int");
+
+                    b.Property<int>("Ciclo")
+                        .HasMaxLength(2)
+                        .HasColumnType("int");
+
+                    b.Property<int>("IdCarrera")
+                        .HasColumnType("int");
+
+                    b.Property<int>("IdMateria")
+                        .HasColumnType("int");
+
+                    b.Property<int>("IdProfesor")
+                        .HasColumnType("int");
+
+                    b.HasKey("IdGrupo");
+
+                    b.ToTable("Grupos");
                 });
 #pragma warning restore 612, 618
         }
